@@ -1,0 +1,96 @@
+.trix-content {
+  border:none;
+  background:#fff;
+padding-top: 43px;
+}
+
+body > div.navbar-fixed > nav > div > ul:nth-child(2) > li {
+  margin-left:60px;
+  font-size:32px;
+  
+}
+
+/*
+#trix-toolbar-1 > div.button_groups > span.button_group.block_tools > button.block-level.decrease {
+  display: none;
+}
+
+#trix-toolbar-1 > div.button_groups > span.button_group.block_tools > button.block-level.increase {
+  display: none;
+}
+*/
+
+#modalSaveHTML {
+  max-height:90%;
+  width:60%;
+  overflow-x: hidden;
+}
+
+#trix-toolbar-1 {
+  position:fixed;
+  background:#fff;
+}
+
+#trix-toolbar-1 > div.button_groups {
+ padding-top:5px;
+}
+
+#trix-toolbar-1 > div.button_groups > span {
+  border:none;
+  border-radius:0;
+}
+
+#trix-toolbar-1 > div.button_groups > span > button {
+  border:none;
+  margin-right:2px;
+}
+
+#dropdown1 {
+  width:90px !important;
+}
+
+#trix-toolbar-1 > div.dialogs > div {
+  -webkit-box-shadow: 0px 0px 31px -3px rgba(0,0,0,0.59);
+  border:none;
+}
+
+#trix-toolbar-1 > div.dialogs > div > div > div > input[type="button"]:nth-child(1) {
+  text-shadow:none;
+  background-image: url("../img/Add Link.png");
+  height:26px;
+  width:26px;
+  margin:0 10px;
+  background-repeat: no-repeat;
+  border:none;
+}
+
+#trix-toolbar-1 > div.dialogs > div > div > div > input[type="button"]:nth-child(2) {
+  text-shadow:none;
+  background-image: url("../img/Delete Link.png");
+  height:26px;
+  width:26px;
+  margin:0 10px;
+  background-repeat: no-repeat;
+  border:none;
+}
+
+#trix-toolbar-1 > div.dialogs > div > div > input[type="url"] {
+  border:none;
+}
+
+#trix-toolbar-1 > div.dialogs > div > div > div {
+  border:none;
+}
+
+  nav ul {
+  margin:auto;
+}
+
+@media screen and (min-width: 480px) {
+  body > div.navbar-fixed > nav > div > a > img {
+    padding:5px;
+  }
+    nav ul {
+
+}
+}
