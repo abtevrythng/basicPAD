@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>RMD5</title>
+  <!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+  
+  <!--Import Google Roboto Font-->
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+  
+  <!-- Materialize CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+  
+  <!--Import custom stylesheet-->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  
+	<!-- load the jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	
+	<!-- Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+  
+  <!-- load Trix -->
+  <link rel="stylesheet" type="text/css" href="css/trix.css">
+  <script type="text/javascript" src="js/trix.js"></script>
+  
+  <!-- load To-Markdown -->
+  <script src="https://github.com/domchristie/to-markdown/blob/master/dist/to-markdown.js"></script>
+  
+  <!-- Load Browesr Detection 
+  *Not needed as file save is working!
+  <script src="js/browser.min.js"></script> -->
+  
+  <!-- Load File Saver -->
+  <script src="https://github.com/eligrey/FileSaver.js/blob/master/FileSaver.min.js"></script>
+  
+</head>
+
+<body>
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper purple">
+        <a href="#" class="brand-logo left"><img src="img/mainicon.png" style="margin-top:3px"></a>
+        <ul>
+          <li><em>basic</em><b>PAD</b></li>
+        </ul>
+        <ul class="right">
+          <li><a class="tooltipped" data-position="bottom" data-delay="10" data-tooltip="Clear All" onclick="insertHTML()"><i class="material-icons">clear_all</i></a></li>
+          <!-- <li><a class="tooltipped" data-position="bottom" data-delay="10" data-tooltip="Horizontal Line" onclick="insertHorizontalLine()"><i class="material-icons">linear_scale</i></a></li> -->
+          <li><a class="modal-trigger" href="#modalCredits"><i class="material-icons">info</i></a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="container">
+  <trix-editor class="trix-content" autofocus></trix-editor>
+  <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+    <a class="btn-floating btn-large red tooltipped" data-position="left" data-delay="5" data-tooltip="Save As">
+      <i class="large material-icons">save</i>
+    </a>
+    <ul>
+      <li><a class="btn-floating yellow darken-1 tooltipped" data-position="left" data-delay="10" data-tooltip="Markdown" onClick="saveAsMARKDOWNDummy()"><img src="img/Hashtag_1.png" style="padding:5px"></a></li>
+      <li><a class="btn-floating green tooltipped" data-position="left" data-delay="10" data-tooltip="HTML" onClick="saveAsHTMLDummy()"><img src="img/HTML_3.png" style="padding:5px"></a></li>
+      <li><a class="btn-floating blue tooltipped" data-position="left" data-delay="10" data-tooltip="TEXT" onClick="saveAsTEXT()"><img src="img/Text Box.png" style="padding:5px"></a></li>
+    </ul>
+  </div>
+  <textarea id="outputHolder" style="display:none"></textarea>
+  <!-- Modals -->
+  <div id="modalBrowser" class="modal">
+    <div class="modal-content">
+      <h4>Sorry!</h4>
+      <p>We do not fully support your browser yet! You will still be able to write but some functionallity<em>(like Auto Save, Save As HTML/TXT/MARKDOWN)</em> will not work.</p>
+      <p>You will be served with a degraded version of <em>basic</em><b>PAD</b> with limited features. Use any of the <a href="https://en.wikipedia.org/wiki/List_of_web_browsers#WebKit-based"> supported browsers from this list</a> for a full featured version.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat ">I UNDERSTAND</a>
+    </div>
+  </div>
+  
+  <div id="modalCredits" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>Credits</h4>
+      <p>We are grateful to the makers of the following open source libraries, portions of which are included in Markdown Writer for Humans.</p>
+      <p><a href="https://github.com/Dogfalo/materialize">Materialize</a> - For all the  material design awesomeness! (<a href="https://github.com/Dogfalo/materialize/blob/master/LICENSE">Licence</a>)</p>
+      <p><a href="https://github.com/Dogfalo/materialize" target="_blank"><img src="https://camo.githubusercontent.com/4649c8978620e21388d1170b30a9f355d80ae713/68747470733a2f2f7261772e6769746875622e636f6d2f646f6766616c6f2f6d6174657269616c697a652f6d61737465722f696d616765732f6d6174657269616c697a652e676966" alt="alt tag" data-canonical-src="https://raw.github.com/dogfalo/materialize/master/images/materialize.gif" style="max-width:100%;"></a></p>
+      <p><a href="https://github.com/basecamp/trix">Basecamp Trix</a> - A Rich Text Editor for Everyday Writing (<a href="https://github.com/basecamp/trix/blob/master/LICENSE">Licence</a>)</p>
+      <p><img src="https://basecamp.com/assets/press/standard-basecamp-logo-48505dc12ba019f2d67791bfc7a2f27c8e30298c81d07d77eea340775ecaabff.svg"></p>
+      <a href="https://github.com/domchristie/to-markdown">to-markdown</a> - An HTML to Markdown converter (<a href="https://github.com/domchristie/to-markdown/blob/master/LICENSE">Licence</a>)</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">OK</a>
+    </div>
+  </div>
+  
+  <div id="modalSaveHTML" class="modal" style="z-index: 1003; display: none; opacity: 0; transform: scaleX(0.7); top: 231.386px;">
+    <div class="modal-content row">
+      <h5>Save as</h5>
+      <p>Enter the file name without extension.</p>
+      <div class="input-field col s6 m6 l6">
+        <select class="icons" id="theme">
+          <optgroup label="Dark">
+            <option value="Cyborg" data-icon="img/themes/themeCyborg.png" class="right circle">Cyborg</option>
+            <option value="Slate" data-icon="img/themes/themeSlate.png" class="right circle">Slate</option>
+            <option value="Superhero" data-icon="img/themes/themeSuperhero.png" class="right circle">Superhero</option>
+          </optgroup>
+          <optgroup label="Light">
+            <option value="Cerulean" data-icon="img/themes/themeCerulean.png" class="right circle">Cerulean</option>
+            <option value="Readable" data-icon="img/themes/themeReadable.png" class="right circle">Readable</option>
+            <option value="Simplex" data-icon="img/themes/themeSimplex.png" class="right circle">Simplex</option>
+            <option value="Spacelab" data-icon="img/themes/themeSpacelab.png" class="right circle">Spacelab</option>
+            <option value="Journal" data-icon="img/themes/themeJournal.png" class="right circle">Journal</option>
+            <option value="United" data-icon="img/themes/themeUnited.png" class="right circle" selected>United</option>
+          </optgroup>
+        </select>
+        <label>Theme</label>
+      </div>
+      <div class="input-field col col s6 m6 l6">
+        <input id="filename-html" type="text" class="validate">
+        <label class="active" for="filename">File Name</label>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-close waves-effect waves-red btn-flat" onClick="cancelCommand()">Cancel</a>
+        <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" onClick="saveAsHTML()">Save</a>
+      </div>
+    </div>
+  </div>
+  
+  <div id="modalSaveMARKDOWN" class="modal" style="z-index: 1003; display: none; opacity: 0; transform: scaleX(0.7); top: 231.386px;">
+    <div class="modal-content">
+      <h5>Save as</h5>
+      <p>Enter the file name without extension.</p>
+      <div class="input-field">
+        <input id="filename-markdown" type="text" class="validate">
+        <label class="active" for="filename">File Name</label>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-red btn-flat" onClick="cancelCommand()">Cancel</a>
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" onClick="saveAsMARKDOWN()">Save</a>
+    </div>
+  </div>
+  
+  </div>
+  <script src="js/main.js"></script> 
+</body>
+</html>
+
