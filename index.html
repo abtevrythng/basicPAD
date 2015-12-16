@@ -2,7 +2,7 @@
 
 <html>
 <head>
-  <title>RMD5</title>
+  <title>basicPAD</title>
   <!--Import Google Icon Font-->
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
   
@@ -49,7 +49,7 @@
           <li><em>basic</em><b>PAD</b></li>
         </ul>
         <ul class="right">
-          <li><a class="tooltipped" data-position="bottom" data-delay="10" data-tooltip="Clear All" onclick="insertHTML()"><i class="material-icons">clear_all</i></a></li>
+          <li><a class="tooltipped" data-position="bottom" data-delay="10" data-tooltip="Clear All" onclick="clearAll()"><i class="material-icons">clear_all</i></a></li>
           <!-- <li><a class="tooltipped" data-position="bottom" data-delay="10" data-tooltip="Horizontal Line" onclick="insertHorizontalLine()"><i class="material-icons">linear_scale</i></a></li> -->
           <li><a class="modal-trigger" href="#modalCredits"><i class="material-icons">info</i></a></li>
         </ul>
@@ -65,7 +65,7 @@
     <ul>
       <li><a class="btn-floating yellow darken-1 tooltipped" data-position="left" data-delay="10" data-tooltip="Markdown" onClick="saveAsMARKDOWNDummy()"><img src="img/Hashtag_1.png" style="padding:5px"></a></li>
       <li><a class="btn-floating green tooltipped" data-position="left" data-delay="10" data-tooltip="HTML" onClick="saveAsHTMLDummy()"><img src="img/HTML_3.png" style="padding:5px"></a></li>
-      <li><a class="btn-floating blue tooltipped" data-position="left" data-delay="10" data-tooltip="TEXT" onClick="saveAsTEXT()"><img src="img/Text Box.png" style="padding:5px"></a></li>
+      <li><a class="btn-floating blue tooltipped" data-position="left" data-delay="10" data-tooltip="TEXT" onClick="saveAsTEXTDummy()"><img src="img/Text Box.png" style="padding:5px"></a></li>
     </ul>
   </div>
   <textarea id="outputHolder" style="display:none"></textarea>
@@ -141,6 +141,21 @@
     <div class="modal-footer">
       <a href="#!" class=" modal-action modal-close waves-effect waves-red btn-flat" onClick="cancelCommand()">Cancel</a>
       <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" onClick="saveAsMARKDOWN()">Save</a>
+    </div>
+  </div>
+  
+  <div id="modalSaveTEXT" class="modal" style="z-index: 1003; display: none; opacity: 0; transform: scaleX(0.7); top: 231.386px;">
+    <div class="modal-content">
+      <h5>Save as</h5>
+      <p>Enter the file name without extension.</p>
+      <div class="input-field">
+        <input id="filename-text" type="text" class="validate">
+        <label class="active" for="filename">File Name</label>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-red btn-flat" onClick="cancelCommand()">Cancel</a>
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat" onClick="saveAsTEXT()">Save</a>
     </div>
   </div>
   
