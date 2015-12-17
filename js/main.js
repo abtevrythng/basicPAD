@@ -1,15 +1,8 @@
 var element = document.querySelector("trix-editor");
 var whichSave = "";
 if (/Android|BlackBerry|iPhone|iPad|iPod|webOS/i.test(navigator.userAgent) === true) {
-		if (
-			document.fullscreenEnabled || 
-			document.webkitFullscreenEnabled || 
-			document.mozFullScreenEnabled ||
-			document.msFullscreenEnabled
-		) {
-			$('#modalFullScreen').openModal();
-		}
-	}​
+	$('#modalFullScreen').openModal();
+}​
 
 if (localStorage.getItem("cleanState") === null || localStorage.getItem("editorState") === null) {
 	localStorage["cleanState"] = JSON.stringify(element.editor);
