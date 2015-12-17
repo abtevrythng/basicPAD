@@ -96,12 +96,22 @@ body > div.navbar-fixed > nav > div > ul:nth-child(2) > li {
 }
 
 @media only screen  
-	and (min-device-width: 320px) 
+	and (min-device-width: 366px) 
 	and (max-device-width: 480px)
 	and (-webkit-min-device-pixel-ratio: 2)
 	and (orientation: portrait){
 		.trix-content {
 			padding-top: 119px;
+		}
+	}
+	
+@media only screen  
+	and (min-device-width: 300px) 
+	and (max-device-width: 365px)
+	and (-webkit-min-device-pixel-ratio: 2)
+	and (orientation: portrait){
+		.trix-content {
+			padding-top: 157px;
 		}
 	}
         
@@ -114,7 +124,7 @@ body > div.navbar-fixed > nav > div > ul:nth-child(2) > li {
 		}
 }
 
-@media screen 
+@media only screen 
   and (device-width: 600px) 
   and (orientation: portrait) {
 	.trix-content {
