@@ -1421,6 +1421,18 @@ http://trix-editor.org/
                 tagName: "blockquote",
                 nestable: !0
             },
+			h1: {
+                tagName: "h1",
+                inheritable: !0
+            },
+            h2: {
+                tagName: "h2",
+                inheritable: !0
+            },
+            h3: {
+                tagName: "h3",
+                inheritable: !0
+            },
             code: {
                 tagName: "pre",
                 text: {
@@ -1485,18 +1497,6 @@ http://trix-editor.org/
                     var e;
                     return e = window.getComputedStyle(t), "bold" === e.fontWeight || e.fontWeight >= 700
                 }
-            },
-            h1: {
-                tagName: "h1",
-                inheritable: !0
-            },
-            h2: {
-                tagName: "h2",
-                inheritable: !0
-            },
-            h3: {
-                tagName: "h3",
-                inheritable: !0
             },
             sub: {
                 tagName: "sub",
