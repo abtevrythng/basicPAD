@@ -188,7 +188,14 @@ trix-editor .attachment .caption.caption-editing textarea {
 .trix-content blockquote {
   margin: 0 0 0 5px;
   padding: 0 0 0 10px;
-  border-left: 5px solid #ccc; }
+  border-left: 5px solid #5e35b1;
+  color: #5e35b1;  }
+.trix-content blockquote blockquote{
+  border-color: #00bcd4;
+  color: #00bcd4; }
+.trix-content blockquote blockquote blockquote{
+  border-color: #43a047;
+  color: #43a047; }
 .trix-content pre {
   font-family: monospace;
   font-size: 12px;

@@ -86,6 +86,11 @@ body > div.navbar-fixed > nav > div > ul:nth-child(2) > li {
   margin:auto;
 }
 
+.trix-content ul > li {
+  list-style-type: square;
+  display: list-item;
+}
+
 @media screen and (min-width: 480px) {
   body > div.navbar-fixed > nav > div > a > img {
     padding:5px;
