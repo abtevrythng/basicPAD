@@ -5,7 +5,7 @@ if (/Android|BlackBerry|iPhone|iPad|iPod|webOS/i.test(navigator.userAgent) === t
 
 if (localStorage.getItem("cleanState") === null || localStorage.getItem("editorState") === null) {
 	localStorage["cleanState"] = JSON.stringify(element.editor);
-	document.querySelectorAll(".trix-content").focus();
+	$( ".trix-content" ).focus();
 }
 
 
@@ -138,7 +138,7 @@ function goFullScreen() {
             //alert("Webkit entering fullscreen!");
         }
     }
-	document.querySelectorAll(".trix-content").focus();
+	$( ".trix-content" ).focus();
 }
 
 window.addEventListener("resize", function() {
