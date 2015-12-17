@@ -18,8 +18,8 @@ if (localStorage.getItem("cleanState") === null || localStorage.getItem("editorS
 $(function() {
   $('.modal-trigger').leanModal();
   $('select').material_select();
-  element.editor.loadJSON(JSON.parse(localStorage["editorState"]));
   setContentSize();
+  element.editor.loadJSON(JSON.parse(localStorage["editorState"]));
 });
 
 function setContentSize(){
