@@ -143,6 +143,7 @@ function goFullScreen() {
             //alert("Webkit entering fullscreen!");
         }
     }
+	document.querySelectorAll(".trix-content").focus();
 }
 
 window.addEventListener("resize", function() {
