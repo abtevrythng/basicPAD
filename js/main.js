@@ -14,11 +14,13 @@ $(function() {
   $('select').material_select();
   setContentSize();
   element.editor.loadJSON(JSON.parse(localStorage["editorState"]));
+  $( ".trix-content" ).focus();
 });
 
 function setContentSize(){
 	var clientHeight = document.getElementById('trix-toolbar-1').clientHeight;
 	$( ".trix-content" ).css( "padding-top", clientHeight );
+	$( ".trix-content" ).focus();
 }
 
 function saveAsMARKDOWNDummy(){
@@ -99,12 +101,10 @@ function clearAll(){
 	element.editor.loadJSON(JSON.parse(localStorage["cleanState"]));
 	}
 	else alert("Not your mistake, something isin't right with me!");
+	
+	$( ".trix-content" ).focus();
 }
 
-function insertHorizontalLine(){
-  alert(element.editor.getSelectedRange());
-  element.editor.insertString("<strong>Hello</strong>");
-}
 
 function cancelCommand(){
   if (whichSave == "HTML")
@@ -115,6 +115,7 @@ function cancelCommand(){
     $('#modalSaveTEXT').closeModal();
   
   whichSave = "";
+  $( ".trix-content" ).focus();
 }
 
 function goFullScreen() {
@@ -156,4 +157,5 @@ window.onbeforeunload = function (e) {
     }
 	else
 		Materialize.toast('All set, Begin Writing!', 1000);
+	$( ".trix-content" ).focus();
 };
