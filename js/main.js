@@ -130,11 +130,11 @@ function goFullScreen() {
         }
         else if (docElm.mozRequestFullScreen) {
             docElm.mozRequestFullScreen();
-            alert("Mozilla entering fullscreen!");
+            //alert("Mozilla entering fullscreen!");
         }
         else if (docElm.webkitRequestFullScreen) {
             docElm.webkitRequestFullScreen();
-            alert("Webkit entering fullscreen!");
+            //alert("Webkit entering fullscreen!");
         }
     }
 }
