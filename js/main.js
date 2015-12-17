@@ -19,7 +19,13 @@ $(function() {
   $('.modal-trigger').leanModal();
   $('select').material_select();
   element.editor.loadJSON(JSON.parse(localStorage["editorState"]));
+  setContentSize();
 });
+
+function setContentSize(){
+	var clientHeight = document.getElementById('trix-toolbar-1').clientHeight;
+	$( ".trix-content" ).css( "padding-top", clientHeight );
+}
 
 function saveAsMARKDOWNDummy(){
   $('#modalSaveMARKDOWN').openModal();
@@ -138,6 +144,12 @@ function goFullScreen() {
         }
     }
 }
+
+window.addEventListener("resize", function() {
+	// Get screen size (inner/outerWidth, inner/outerHeight)
+	  setContentSize();
+	
+}, false);
 
 window.onbeforeunload = function (e) {
     e = e || window.event;
