@@ -119,13 +119,17 @@ function cancelCommand(){
 }
 
 $('#fullScreenBtn').on('click', function(e){ 
-	if ($('#fullScreenBtn').text() === "fullscreen") {
+	if ($('#fullScreenBtn').text() === "fullscreen"){
 		$('#fullScreenBtn').text() = "fullscreen_exit";
 	}
 	else if ($('#fullScreenBtn').text() === "fullscreen_exit") {
 		$('#fullScreenBtn').text() = "fullscreen";
 	}
-}
+      return false;
+});
+
+
+
 
 function goFullScreen() {
 
