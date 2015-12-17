@@ -118,6 +118,15 @@ function cancelCommand(){
   $( ".trix-content" ).focus();
 }
 
+$('#fullScreenBtn').on('click', function(e){ 
+	if ($('#fullScreenBtn').text() === "fullscreen") {
+		$('#fullScreenBtn').text() = "fullscreen_exit";
+	}
+	else if ($('#fullScreenBtn').text() === "fullscreen_exit") {
+		$('#fullScreenBtn').text() = "fullscreen";
+	}
+}
+
 function goFullScreen() {
 
     var isInFullScreen = (document.fullScreenElement && document.fullScreenElement !==     null) ||    // alternative standard method  
@@ -139,6 +148,7 @@ function goFullScreen() {
         }
     }
 	$( ".trix-content" ).focus();
+	
 }
 
 window.addEventListener("resize", function() {
