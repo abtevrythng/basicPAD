@@ -1,6 +1,13 @@
 var element = document.querySelector("trix-editor");
 var whichSave = "";
-document.documentElement.requestFullscreen();
+if (
+	document.fullscreenEnabled || 
+	document.webkitFullscreenEnabled || 
+	document.mozFullScreenEnabled ||
+	document.msFullscreenEnabled
+) {
+	$('#modalFullScreen').openModal();
+}
 
 if (localStorage.getItem("cleanState") === null || localStorage.getItem("editorState") === null) {
 	localStorage["cleanState"] = JSON.stringify(element.editor);
@@ -108,6 +115,28 @@ function cancelCommand(){
     $('#modalSaveTEXT').closeModal();
   
   whichSave = "";
+}
+
+function goFullScreen() {
+
+    var isInFullScreen = (document.fullScreenElement && document.fullScreenElement !==     null) ||    // alternative standard method  
+            (document.mozFullScreen || document.webkitIsFullScreen);
+
+    var docElm = document.documentElement;
+    if (!isInFullScreen) {
+
+        if (docElm.requestFullscreen) {
+            docElm.requestFullscreen();
+        }
+        else if (docElm.mozRequestFullScreen) {
+            docElm.mozRequestFullScreen();
+            alert("Mozilla entering fullscreen!");
+        }
+        else if (docElm.webkitRequestFullScreen) {
+            docElm.webkitRequestFullScreen();
+            alert("Webkit entering fullscreen!");
+        }
+    }
 }
 
 window.onbeforeunload = function (e) {
