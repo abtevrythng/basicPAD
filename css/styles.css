@@ -94,3 +94,33 @@ body > div.navbar-fixed > nav > div > ul:nth-child(2) > li {
 
 }
 }
+
+@media only screen  
+	and (min-device-width: 320px) 
+	and (max-device-width: 480px)
+	and (-webkit-min-device-pixel-ratio: 2)
+	and (orientation: portrait){
+		.trix-content {
+			padding-top: 119px;
+		}
+	}
+        
+@media only screen 
+	and (min-device-width: 320px) 
+	and (max-device-width: 735px)
+	and (orientation: landscape) {
+	  .trix-content {
+				padding-top: 81px;
+		}
+}
+
+@media screen 
+  and (device-width: 600px) 
+  and (orientation: portrait) {
+	.trix-content {
+			padding-top: 81px;
+		}
+
+}
+
+
