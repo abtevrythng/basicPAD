@@ -1,5 +1,6 @@
 {
- "name": "basicPAD",
+ "short_name": "basicPAD",
+ "name": "basicPAD beta v1.0",
  "icons": [
   {
    "src": "\/android-icon-36x36.png",
