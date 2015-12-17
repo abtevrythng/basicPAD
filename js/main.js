@@ -1,8 +1,7 @@
 var element = document.querySelector("trix-editor");
 var whichSave = "";
-if (/Android|BlackBerry|iPhone|iPad|iPod|webOS/i.test(navigator.userAgent) === true) {
+if (/Android|BlackBerry|iPhone|iPad|iPod|webOS/i.test(navigator.userAgent) === true)
 	$('#modalFullScreen').openModal();
-}​
 
 if (localStorage.getItem("cleanState") === null || localStorage.getItem("editorState") === null) {
 	localStorage["cleanState"] = JSON.stringify(element.editor);
