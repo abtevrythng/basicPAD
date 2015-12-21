@@ -5,6 +5,13 @@ if (/Android|BlackBerry|iPhone|iPad|iPod|webOS/i.test(navigator.userAgent) === t
 	window.scrollTo(0,1);
 }
 
+$('body').on('focusin', 'input, textarea', function(event) {
+  if(navigator.userAgent.indexOf('Android') > -1 && ...){
+   var scroll = $(this).offset();
+   window.scrollTo(0, scroll);
+ }
+});
+
 if (localStorage.getItem("cleanState") === null || localStorage.getItem("editorState") === null) {
 	localStorage["cleanState"] = JSON.stringify(element.editor);
 	$( ".trix-content" ).focus();
