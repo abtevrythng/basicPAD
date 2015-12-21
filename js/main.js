@@ -10,6 +10,21 @@ if (localStorage.getItem("cleanState") === null || localStorage.getItem("editorS
 	$( ".trix-content" ).focus();
 }
 
+function absorbEvent_(event) {
+      var e = event || window.event;
+      e.preventDefault && e.preventDefault();
+      e.stopPropagation && e.stopPropagation();
+      e.cancelBubble = true;
+      e.returnValue = false;
+      return false;
+    }
+
+    function preventLongPressMenu(node) {
+      node.ontouchstart = absorbEvent_;
+      node.ontouchmove = absorbEvent_;
+      node.ontouchend = absorbEvent_;
+      node.ontouchcancel = absorbEvent_;
+    }
 
 $(function() {
   $('.modal-trigger').leanModal();
@@ -17,6 +32,7 @@ $(function() {
   setContentSize();
   element.editor.loadJSON(JSON.parse(localStorage["editorState"]));
   $( ".trix-content" ).focus();
+  preventLongPressMenu($( ".trix-content" ));
 });
 
 function setContentSize(){
