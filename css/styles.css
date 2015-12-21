@@ -1,7 +1,8 @@
 .trix-content {
   border:none;
   background:#fff;
-padding-top: 43px;
+  padding-top: 43px;
+  -webkit-touch-callout: none;
 }
 
 body > div.navbar-fixed > nav > div > ul:nth-child(2) > li {
